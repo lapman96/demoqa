@@ -19,6 +19,22 @@
         <assertj-core.version>3.25.3</assertj-core.version>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>de.sormuras.junit</groupId>
+                <artifactId>junit-platform-maven-plugin</artifactId>
+                <version>1.1.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <classNamePatterns>
+                        <pattern>.*Test</pattern>
+                    </classNamePatterns>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>com.codeborne</groupId>

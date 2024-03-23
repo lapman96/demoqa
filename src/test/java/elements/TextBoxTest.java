@@ -7,8 +7,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 class TextBoxTest extends BaseElementsTest {
     private final String PAGE_URL = "https://demoqa.com/text-box";
@@ -43,7 +42,7 @@ class TextBoxTest extends BaseElementsTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/listOfInvalidEmails.csv")
+    @CsvFileSource(resources = "/testData/listOfInvalidEmails.csv")
     void checkSubmitInvalidEmailField(String invalidEmail) {
         open(PAGE_URL);
         emailField.setValue(invalidEmail);
