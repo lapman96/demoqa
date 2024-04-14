@@ -24,6 +24,7 @@ target/
 .allure
 .idea
 build/
+.gradle
 
 ### Mac OS ###
 .DS_Store
