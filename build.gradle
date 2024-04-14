@@ -28,6 +28,8 @@ description = 'Pet project to practice automation testing skills in Java'
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 test {
+    systemProperties System.getProperties()
+
     useJUnitPlatform {
         if (project.hasProperty('testTags')) {
             String[] tags = project.testTags.split(',')
