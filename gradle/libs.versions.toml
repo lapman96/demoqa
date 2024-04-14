@@ -1,6 +1,6 @@
 [versions]
 com-codeborne-selenide = "7.2.0"
-io-github-bonigarcia-webdrivermanager = "5.7.0"
+io-github-bonigarcia-webdrivermanager = "5.8.0"
 org-assertj-assertj-core = "3.25.3"
 org-junit-jupiter-junit-jupiter-api = "5.10.0"
 org-junit-jupiter-junit-jupiter-params = "5.10.0"

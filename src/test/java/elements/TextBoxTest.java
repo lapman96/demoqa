@@ -9,10 +9,12 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
+import static org.demoqa.utils.PagePaths.BASE_UI_URL;
+import static org.demoqa.utils.PagePaths.TEXT_BOX_PAGE_URL;
 
 @Tag("Elements")
 class TextBoxTest extends BaseElementsTest {
-    private final String PAGE_URL = "https://demoqa.com/text-box";
+    private final String PAGE_URL = BASE_UI_URL + TEXT_BOX_PAGE_URL;
     private SelenideElement fullNameField = $(By.id("userName"));
     private SelenideElement emailField = $(By.id("userEmail"));
     private SelenideElement currentAddressField = $(By.cssSelector("textarea#currentAddress"));
@@ -47,7 +49,7 @@ class TextBoxTest extends BaseElementsTest {
 
     @ParameterizedTest
     @Tag("P1")
-    @CsvFileSource(resources = "/testData/listOfInvalidEmails.csv")
+    @CsvFileSource(resources = "/common/testData/listOfInvalidEmails.csv")
     void checkSubmitInvalidEmailField(String invalidEmail) {
         open(PAGE_URL);
         emailField.setValue(invalidEmail);

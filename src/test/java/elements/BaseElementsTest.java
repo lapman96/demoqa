@@ -19,7 +19,7 @@ public class BaseElementsTest {
         Configuration.timeout = 10000;
         Configuration.screenshots = true;
         Configuration.fastSetValue = true;
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.reopenBrowserOnFail = true;
     }
 }
