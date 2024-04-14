@@ -2,6 +2,8 @@ package elements;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -9,6 +11,7 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
 
+@Tag("Elements")
 class TextBoxTest extends BaseElementsTest {
     private final String PAGE_URL = "https://demoqa.com/text-box";
     private SelenideElement fullNameField = $(By.id("userName"));
@@ -22,6 +25,7 @@ class TextBoxTest extends BaseElementsTest {
     private SelenideElement submitButton = $(By.id("submit"));
 
     @Test
+    @Tag("P1")
     void checkSubmitFullName() {
         String fullName = "Serhii Lapin";
         open(PAGE_URL);
@@ -32,6 +36,7 @@ class TextBoxTest extends BaseElementsTest {
     }
 
     @Test
+    @Tag("P1")
     void checkSubmitValidEmailField() {
         String email = "test@test.com";
         open(PAGE_URL);
@@ -42,6 +47,7 @@ class TextBoxTest extends BaseElementsTest {
     }
 
     @ParameterizedTest
+    @Tag("P1")
     @CsvFileSource(resources = "/testData/listOfInvalidEmails.csv")
     void checkSubmitInvalidEmailField(String invalidEmail) {
         open(PAGE_URL);
@@ -53,6 +59,7 @@ class TextBoxTest extends BaseElementsTest {
     }
 
     @Test
+    @Tag("P1")
     void checkSubmitCurrentAddress() {
         String currentAddress = "Budapest, Viola 100, 777";
         open(PAGE_URL);
@@ -63,6 +70,7 @@ class TextBoxTest extends BaseElementsTest {
     }
 
     @Test
+    @Tag("P1")
     void checkSubmitPermanentAddress() {
         String permanentAddress = "Budapest, Viola 100, 777";
         open(PAGE_URL);
@@ -73,6 +81,7 @@ class TextBoxTest extends BaseElementsTest {
     }
 
     @Test
+    @Tag("P1")
     void checkSubmitAllTextFields() {
         String fullName = "Serhii Lapin";
         String email = "test@test.com";
