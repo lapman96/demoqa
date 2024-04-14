@@ -1,7 +1,10 @@
 package org.demoqa.utils;
 
-import java.util.Properties;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
+import java.util.Properties;
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PagePaths {
     private static final Properties properties = PropertiesLoader.getProperties();
     public static final String BASE_UI_URL = properties.getProperty("base_url");

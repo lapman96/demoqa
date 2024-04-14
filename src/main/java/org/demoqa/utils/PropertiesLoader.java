@@ -1,10 +1,13 @@
 package org.demoqa.utils;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PropertiesLoader {
     private static final String PATH_TO_COMMON_PROPERTIES = "common/common.properties";
 
