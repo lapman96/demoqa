@@ -1,21 +1,21 @@
-package org.demoqa.elements_pages;
+package org.demoqa.pageobjects.elements;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.demoqa.pageobjects.BasePage;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
-import static org.demoqa.utils.PagePaths.BASE_UI_URL;
-import static org.demoqa.utils.PagePaths.CHECKBOX_BOX_PAGE_URL;
+import static org.demoqa.data.PagePaths.*;
 
 
 @NoArgsConstructor
-public class CheckBoxElementPage extends BaseElementPage {
+public class CheckBoxPage extends BasePage {
     @Getter
-    private static final String PAGE_URL = BASE_UI_URL + CHECKBOX_BOX_PAGE_URL;
+    private static final String PAGE_URL = BASE_DEMO_QA_UI_URL + CHECKBOX_BOX_PAGE_URL;
 
     private final SelenideElement expandAllCheckboxesButton = $(By.cssSelector("button[title=\"Expand all\"]"));
 
@@ -28,7 +28,7 @@ public class CheckBoxElementPage extends BaseElementPage {
     private final ElementsCollection checkboxes = $$(By.cssSelector("span[class=\"rct-title\"]"));
 
     @Override
-    public CheckBoxElementPage openPage() {
+    public CheckBoxPage openPage() {
         open(PAGE_URL);
         return this;
     }
@@ -52,17 +52,17 @@ public class CheckBoxElementPage extends BaseElementPage {
         return checkbox.has(Condition.cssClass("rct-icon-check"));
     }
 
-    public CheckBoxElementPage clickOnTheExpandAllCheckboxesButton() {
+    public CheckBoxPage clickOnTheExpandAllCheckboxesButton() {
         expandAllCheckboxesButton.click();
         return this;
     }
 
-    public CheckBoxElementPage clickOnTheCollapseAllCheckboxesButton() {
+    public CheckBoxPage clickOnTheCollapseAllCheckboxesButton() {
         collapseAllCheckboxesButton.click();
         return this;
     }
 
-    public CheckBoxElementPage tickTheCheckboxByName(String checkboxName) {
+    public CheckBoxPage tickTheCheckboxByName(String checkboxName) {
         SelenideElement checkbox = getCheckboxByName(checkboxName);
         if(isCheckboxUnchecked(checkboxName) || isCheckboxHalfChecked(checkboxName)) {
             checkbox.click();
@@ -70,7 +70,7 @@ public class CheckBoxElementPage extends BaseElementPage {
         return this;
     }
 
-    public CheckBoxElementPage untickTheCheckboxByName(String checkboxName) {
+    public CheckBoxPage untickTheCheckboxByName(String checkboxName) {
         SelenideElement checkbox = getCheckboxByName(checkboxName);
         if(isCheckboxChecked(checkboxName)) {
             checkbox.click();

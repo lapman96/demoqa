@@ -1,20 +1,21 @@
-package elements;
+package testcases.demoqa.elements;
 
-import org.demoqa.elements_pages.CheckBoxElementPage;
+import org.demoqa.pageobjects.elements.CheckBoxPage;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import core.BaseUiTest;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("Elements")
-class CheckBoxTest extends BaseElementsTest {
+class CheckBoxTest extends BaseUiTest {
 
     @Tag("P1")
     @Test
     void checkTheAbilityToExpandAllCheckboxes() {
-        CheckBoxElementPage checkBoxElementPage = new CheckBoxElementPage();
+        CheckBoxPage checkBoxElementPage = new CheckBoxPage();
         checkBoxElementPage
                 .openPage()
                 .clickOnTheExpandAllCheckboxesButton();
@@ -29,7 +30,7 @@ class CheckBoxTest extends BaseElementsTest {
     @Tag("P1")
     @Test
     void checkTheAbilityToCollapseAllCheckboxes() {
-        CheckBoxElementPage checkBoxElementPage = new CheckBoxElementPage();
+        CheckBoxPage checkBoxElementPage = new CheckBoxPage();
 
         checkBoxElementPage
                 .openPage()
@@ -50,7 +51,7 @@ class CheckBoxTest extends BaseElementsTest {
                 "react", "angular", "veu", "office", "public", "private", "classified", "general", "downloads",
                 "wordFile", "excelFile");
 
-        CheckBoxElementPage checkBoxElementPage = new CheckBoxElementPage();
+        CheckBoxPage checkBoxElementPage = new CheckBoxPage();
         checkBoxElementPage
                 .openPage()
                 .tickTheCheckboxByName("Home");
@@ -63,7 +64,7 @@ class CheckBoxTest extends BaseElementsTest {
     void checkTheAbilityToTickAllCheckboxesInTheDefinedFolder() {
         List<String> expectedResult = List.of( "desktop", "notes", "commands");
 
-        CheckBoxElementPage checkBoxElementPage = new CheckBoxElementPage();
+        CheckBoxPage checkBoxElementPage = new CheckBoxPage();
 
         checkBoxElementPage
                 .openPage()
@@ -81,7 +82,7 @@ class CheckBoxTest extends BaseElementsTest {
                 "react", "angular", "veu", "private", "classified", "general", "downloads",
                 "wordFile", "excelFile");
 
-        CheckBoxElementPage checkBoxElementPage = new CheckBoxElementPage();
+        CheckBoxPage checkBoxElementPage = new CheckBoxPage();
         checkBoxElementPage
                 .openPage()
                 .clickOnTheExpandAllCheckboxesButton()

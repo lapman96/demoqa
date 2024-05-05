@@ -1,4 +1,4 @@
-package elements;
+package testcases.demoqa.elements;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
+import core.BaseUiTest;
 
 import static com.codeborne.selenide.Selenide.*;
-import static org.demoqa.utils.PagePaths.BASE_UI_URL;
-import static org.demoqa.utils.PagePaths.TEXT_BOX_PAGE_URL;
+import static org.demoqa.data.PagePaths.*;
 
 @Tag("Elements")
-class TextBoxTest extends BaseElementsTest {
-    private final String PAGE_URL = BASE_UI_URL + TEXT_BOX_PAGE_URL;
+class TextBoxTest extends BaseUiTest {
+    private final String PAGE_URL = BASE_DEMO_QA_UI_URL + TEXT_BOX_PAGE_URL;
     private SelenideElement fullNameField = $(By.id("userName"));
     private SelenideElement emailField = $(By.id("userEmail"));
     private SelenideElement currentAddressField = $(By.cssSelector("textarea#currentAddress"));
@@ -49,7 +49,7 @@ class TextBoxTest extends BaseElementsTest {
 
     @ParameterizedTest
     @Tag("P1")
-    @CsvFileSource(resources = "/common/testData/listOfInvalidEmails.csv")
+    @CsvFileSource(resources = "/common/testData/ui/listOfInvalidEmails.csv")
     void checkSubmitInvalidEmailField(String invalidEmail) {
         open(PAGE_URL);
         emailField.setValue(invalidEmail);

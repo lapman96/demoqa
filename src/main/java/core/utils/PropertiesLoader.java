@@ -1,4 +1,4 @@
-package org.demoqa.utils;
+package core.utils;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
